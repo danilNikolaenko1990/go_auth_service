@@ -9,8 +9,3 @@ type User struct {
 	PasswordHash string
 	CreatedAt    string
 }
-
-func IsPasswordValid(pass string) bool {
-	//todo check pass
-	return true
-}
