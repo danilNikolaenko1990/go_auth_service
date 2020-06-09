@@ -3,18 +3,8 @@ package db
 import (
 	"github.com/go-pg/pg"
 	"net"
-	"os"
 	"sync"
 )
-
-func init() {
-	//todo remove
-	os.Setenv("DB_USER", "admin")
-	os.Setenv("DB_PASSWORD", "admin")
-	os.Setenv("DB_NAME", "postgres")
-	os.Setenv("DB_HOST", "localhost")
-	os.Setenv("DB_PORT", "5432")
-}
 
 var db *pg.DB
 var once sync.Once
