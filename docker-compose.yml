@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   db:
-    build: postgres
+    image: postgres
     container_name: auth-service-db
     restart: always
     ports:
@@ -16,8 +16,8 @@ services:
   auth-service:
     image: auth-service:latest
     build:
-      dockerfile: build/auth-service/Dockerfile
       context: .
+      dockerfile: Dockerfile
     container_name: auth-service
     ports:
       - "8080:8080"
