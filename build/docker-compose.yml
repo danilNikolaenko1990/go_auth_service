@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.9'
 
 services:
   db:
@@ -9,6 +9,18 @@ services:
       - 5432:5432 #just for Goland db client
     volumes:
       - ./postgres/schema.sql:/docker-entrypoint-initdb.d/10-init.sql
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+  auth-service:
+    image: auth-service:latest
+    build:
+      dockerfile: build/auth-service/Dockerfile
+      context: .
+    container_name: auth-service
+    ports:
+      - "8080:8080"
     environment:
       POSTGRES_DB: postgres
       POSTGRES_USER: admin

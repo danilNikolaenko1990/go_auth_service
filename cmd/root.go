@@ -7,7 +7,7 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "auth_service",
+	Use:   "auth-service",
 	Short: "auth service",
 }
 

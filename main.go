@@ -1,6 +1,6 @@
 package main
 
-import "auth_service/cmd"
+import cmd "auth-service/cmd"
 
 func main() {
 	cmd.Execute()

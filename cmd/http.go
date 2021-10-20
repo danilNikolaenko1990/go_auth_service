@@ -1,10 +1,10 @@
 package cmd
 
 import (
-	passwordCipher "auth_service/cipher"
-	"auth_service/controllers"
-	"auth_service/db"
-	"auth_service/service"
+	passwordCipher "auth-service/cipher"
+	"auth-service/controllers"
+	"auth-service/db"
+	"auth-service/service"
 	"fmt"
 	"github.com/go-playground/validator/v10"
 	"github.com/gorilla/mux"

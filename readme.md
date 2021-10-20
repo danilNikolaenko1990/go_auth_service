@@ -24,7 +24,7 @@
 Для запуска базы заходим в папку build и делаем `docker-compose up &`
 
 После того, как база стартовала, делаем go build и запускаем сервис:
-`./auth_service http --server-port=8080 --db-user=admin --db-password=admin --db-host=localhost --db-port=5432 --db-name=postgres`
+`./auth-service http --server-port=8080 --db-user=admin --db-password=admin --db-host=localhost --db-port=5432 --db-name=postgres`
 
 Сервис имеет два метода. 
 
