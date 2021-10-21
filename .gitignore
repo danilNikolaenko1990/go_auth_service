@@ -1,2 +1,4 @@
 .idea/
-auth_service
+auth-service
+vendor
+auth-service

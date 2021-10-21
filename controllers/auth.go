@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"auth_service/service"
+	"auth-service/service"
 	"encoding/json"
 	"github.com/go-playground/validator/v10"
 	"net/http"
