@@ -1,6 +1,7 @@
 # syntax=docker/dockerfile:1
 
 FROM golang:1.17-alpine as builder
+RUN apk add bash
 
 
 WORKDIR /app
