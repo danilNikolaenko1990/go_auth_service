@@ -13,7 +13,7 @@ RUN go mod download
 COPY . /app
 RUN chmod +x wait-for-postgres.sh
 
-RUN go build -o /auth-service
+RUN go build -o auth-service
 
 EXPOSE 8080
 CMD ["./auth-service"]
