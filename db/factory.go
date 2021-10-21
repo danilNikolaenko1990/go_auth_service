@@ -1,6 +1,6 @@
 package db
 
-import "auth_service/domain"
+import "auth-service/domain"
 
 type UserRepositoryFactory struct{}
 

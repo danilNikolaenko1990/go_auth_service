@@ -1,8 +1,8 @@
 package service
 
 import (
-	"auth_service/cipher"
-	"auth_service/domain"
+	"auth-service/cipher"
+	"auth-service/domain"
 	"errors"
 	"github.com/go-pg/pg"
 )

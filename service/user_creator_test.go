@@ -1,7 +1,7 @@
 package service
 
 import (
-	"auth_service/domain"
+	"auth-service/domain"
 	"errors"
 	"github.com/stretchr/testify/assert"
 	"testing"

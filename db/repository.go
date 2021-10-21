@@ -1,7 +1,7 @@
 package db
 
 import (
-	"auth_service/domain"
+	"auth-service/domain"
 	"github.com/go-pg/pg"
 	"github.com/go-pg/pg/orm"
 )
