@@ -1,33 +1,33 @@
-Тестовое.
-Текст задания: 
-Реализовать сервис на языке программирования Golang. 
-Задача сервиса – регистрировать, авторизировать пользователей.
-Сервис должен иметь два HTTP POST метода:
+Test task for one of the companies.
+Quest text:
+Implement the service in the Golang programming language.
+The task of the service is to register, authorize users.
+The service must have two HTTP POST methods:
 * Login 
 * Register
 
-Базу данных использовать PostgreSQL
+Use PostgreSQL database
 
-Обязательные поля при регистрации:
-* Логин
+Required fields for registration:
+* Login
 * Email
-* Пароль
-* Номер телефона
+* password
+* phone number
 
-Детали реализации остаются на усмотрение исполнителя.
+Implementation details are at the discretion of the developer.
 
-**Сервис авторизации.** 
+**Auth Service.** 
 
-Клонируем репозиторий в рабочую папку go.
-В системе должен быть установлен docker-compose и docker
+Clone repository to go work folder.
+docker-compose and docker must be installed
 
-запуск: 
+run: 
 `docker-compose  -f docker-compose.yml up`
 
 
-Сервис имеет два метода. 
+Service has two methods: 
 
-Запрос для регистрации
+Registration query:
 
 `curl --location --request POST 'http://localhost:8080/register' \
  --header 'Content-Type: text/plain' \
@@ -38,11 +38,11 @@
  	"phone":"11398724911"
  }'`
 
- пример ответа: 
+ example of the answer: 
  
  `{"registered":true,"error_message":"","error_code":""}`
  
- Запрос для логина
+ login query
  
  `curl --location --request POST 'http://localhost:8080/login' \
   --header 'Content-Type: text/plain' \
@@ -50,21 +50,21 @@
   	"login":"testLogin",
   	"password":"querty123"
   }'`
-  
-  Пример ответа: 
-  `{
+
+example of the answer:
+`{
       "logged": true,
       "error_message": ""
   }`
 
-**Что умеет**
-* Валидация входящих параметров при регистрации и логине 
-* Проверка на наличие в системе юзера с уже имеющимися логином, телефоном или email
-* Бизнес логика закрыта unit тестами
-* пароли хранятся в виде хешей
+**Features**
+* Validation params during registration and login 
+* Checking existing user with same login, phone number or email
+* Business logic covered with unit tests
+* Password stored as hashes
 
-**Где сознательно срезал углы в угоду скорости реализации**
-* di контейнер для проекта такого уровня сознательно не стал использовать.
-* Логгирование. Вместо этого прокидываю ошибки наружу, сделав допущение, что это внутренний сервис.
-* Масштаб покрытия unit тестами
-* не стал внедрять механизм миграций, схема бд инициализируется средствами докер-контейнера (см. docker-compose)
+**Made it easier to make it faster to code**
+* DI container wasn't use
+* Throwing errors outside without logger
+* Less unit tests
+* Without migration system like goose because db init made with docker container tools (see ./build/postgres/schema.sql:/docker-entrypoint-initdb.d/10-init.sql in docker-compose) 
